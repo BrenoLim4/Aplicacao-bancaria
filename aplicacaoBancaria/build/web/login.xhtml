@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login</title>
+        <style>
+            .erro{
+                color: red; 
+            }
+            .info{
+                color: blue;
+            }
+        </style>
+    </h:head>
+    <h:body style=" background-color: brown">
+        
+        <h:form prependId="false">
+            <f:facet name="header">Faça login</f:facet>
+            <p:panel style="background-color: aqua; max-width: 700px ">
+                <h:messages id="idMsg" errorClass="erro" infoClass="info"/>                
+                <h:panelGrid columns="4">
+                    Cpf: <h:inputText value="#{login.cpf}" required="true"
+                                      requiredMessage="Campo cpf obrigatório"/>
+                    Senha: <h:inputSecret value="#{login.senha}" required="true"
+                                        requiredMessage="Campo senha Obrigatório"/>
+                </h:panelGrid>
+                <h:panelGrid columns="2">
+                    <h:commandButton style="margin-left: 230px" value="fazer login" action="#{login.fazerLogin()}"/>
+                </h:panelGrid>                   
+            </p:panel>
+        </h:form>
+
+    </h:body>
+</html>
+
